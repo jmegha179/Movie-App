@@ -1,0 +1,34 @@
+<head>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="login" ng-controller="loginCtrl">
+    <div id="log">
+
+        <form name="myForm" style="margin: 20px" class="" id="up" novalidate>
+
+            <center style="margin: 10px">
+                <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+            </center>
+            </h2>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="myName" ng-model="myName" size= 37 style="height:30px" placeholder="Enter User Name"
+                    required />
+                <span ng-show="myForm.myName.$untouched ">The name is required.</span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="pass" ng-model="pass" size= 37 style="height:30px" placeholder="password***"
+                    required />
+
+                <span ng-show="myForm.pass.$untouched">The password is required.</span>
+            </div>
+
+            <Button type="button" id="button" class=" btn-default" style="width:100%" value="Login" ng-disabled="myForm.myName.$invalid || myForm.myName.$untouched || myForm.myName.$dirty && myForm.pass.$invalid ||myForm.myName.$untouched"
+                ng-click="check(this.form)">Login</button>
+            <a href="../View/forget.html" style="color:#396C78;text-decoration:none;">Forget Password </a>
+        </form>
+    </div>
+</body>
